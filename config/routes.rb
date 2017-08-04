@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # get 'static_page/home' # GET req to /static_page/home
 
   get '/list', to: 'static_page#list'
+  get '/posts/:id', to: 'static_page#show_post', as: 'single_blog'
+
+  get '/users/:username', to: 'static_page#show_user'
 
   # method to create a restful routes
   # resources :posts

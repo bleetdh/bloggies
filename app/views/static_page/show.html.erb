@@ -1,0 +1,9 @@
+<h1><%= @current_post.title %></h1>
+<small>
+  <%= @current_post.created_at %>
+</small>
+<p>
+  <%= @current_post.content %>
+</p>
+
+<%= link_to "Back to Home", root_path %>

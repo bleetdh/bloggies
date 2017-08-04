@@ -5,5 +5,5 @@
  <small><%= post.created_at %></small>
  <p><%= post.content %></p>
 
- <a href="/posts/<%= post.id %>">Read more</a>
+ <%= link_to "Read more", single_blog_path(post) %>
 <% end %>

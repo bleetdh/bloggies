@@ -7,4 +7,9 @@ class StaticPageController < ApplicationController
 
   def list
   end
+
+  def show_post
+    @current_post = Post.find(params[:id])
+    render :show
+  end
 end
