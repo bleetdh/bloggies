@@ -1,2 +1,9 @@
-<h1>StaticPage#home</h1>
-<p>Find me in app/views/static_page/home.html.erb</p>
+<h1>Hey! <%= @current_user.name %></h1>
+
+<% @posts.each do | post | %>
+ <h1><%= post.title %></h1>
+ <small><%= post.created_at %></small>
+ <p><%= post.content %></p>
+
+ <a href="/posts/<%= post.id %>">Read more</a>
+<% end %>
