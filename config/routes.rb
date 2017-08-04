@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get '/about', to: 'static#about'
 
   # method to create a restful routes
-  resources :users
 
   # resources :posts
 end
