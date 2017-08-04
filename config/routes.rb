@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'application#home' # don't need to specify path
   get '/about', to: 'static#about'
 
-  get '/:username', to: 'user#show'
+  # method to create a restful routes
+  resources :users
 
-  # router.get('/about', applicationCtrl.getAbout)
+  # resources :posts
 end
