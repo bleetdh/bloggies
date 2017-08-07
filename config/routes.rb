@@ -13,10 +13,17 @@ Rails.application.routes.draw do
 
   get '/posts/new', to: 'static_page#new'
   post '/posts/new', to: 'static_page#create_post'
+
+
   # start of a restful routes
   get '/posts/:id', to: 'static_page#show_post', as: 'single_blog'
 
+  # edit just show the form
+  get '/posts/:id/update', to: 'static_page#edit_post', as: 'post_edit'
+  # update, actually update the db
+  patch '/posts/:id', to: 'static_page#update_post', as: 'post_update'
+
 
   # method to create a restful routes
-  # resources :posts
+  # resources :users
 end

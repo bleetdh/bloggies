@@ -1,0 +1,15 @@
+<h1>Updating Post: <%= @edited_post.title %></h1>
+
+<%= form_for @edited_post, url: post_update_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, size: "80x8" %>
+
+  <%= f.label :view_count %>
+  <%= f.number_field :view_count %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to Home", root_path %>

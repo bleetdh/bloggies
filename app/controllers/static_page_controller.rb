@@ -34,4 +34,21 @@ class StaticPageController < ApplicationController
     # ? what happened after creating post
 
   end
+
+  def edit_post
+    @edited_post = Post.find(params[:id])
+
+    render :edit
+  end
+
+  def update_post
+    @updated_post = Post.find(params[:id])
+
+    @updated_post.title = params[:post][:title]
+    @updated_post.content = params[:post][:content]
+    @updated_post.view_count = params[:post][:view_count]
+
+
+    redirect_to single_blog_path(@updated_post) if @updated_post.save
+  end
 end
