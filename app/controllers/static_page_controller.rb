@@ -14,6 +14,8 @@ class StaticPageController < ApplicationController
   end
 
   def new
+    @new_post = Post.new
+    # pass @new_post to the form_for helper
   end
 
   def create_post

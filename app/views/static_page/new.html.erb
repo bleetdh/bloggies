@@ -1,4 +1,22 @@
-<h1>New Post</h1>
+<h1>New Post w/ form_for</h1>
+
+<!-- needs to adjust the action route for form -->
+<%= form_for @new_post, url: posts_new_path do |f| %>
+  <!-- No props called 'field' in the post db -->
+  <%#= f.text_field :field %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, size: "80x8" %>
+
+  <%= f.label :view_count %>
+  <%= f.number_field :view_count %>
+
+  <%= f.submit %>
+<% end %>
+
+<h1>New Post w/ form_tag</h1>
 
 <%= form_tag do %>
   <%= label_tag(:title, "Title") %>
