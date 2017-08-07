@@ -1,9 +1,15 @@
 <h1>Hey! <%= @current_user.name %></h1>
 
+<h2>Create new post</h2>
+<%= link_to "New post", posts_new_path %>
+
+<h2>List of all posts</h2>
 <% @posts.each do | post | %>
  <h1><%= post.title %></h1>
- <small><%= post.created_at %></small>
- <p><%= post.content %></p>
+ <small><%#= post.created_at %></small>
+ <p><%#= post.content %></p>
+
+ <%#=  %>
 
  <%= link_to "Read more", single_blog_path(post) %>
 <% end %>
